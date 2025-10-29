@@ -12,11 +12,12 @@ import SignUp from "./pages/Auth/SignUp";
 import Home from "./pages/Dashboard/Home";
 import Income from "./pages/Dashboard/Income";
 import Expense from "./pages/Dashboard/Expense";
+import UserProvider from "../src/context/userContext";
 
 const App = () => {
   return (
-    <div>
-      <Router>
+    <Router>
+    <UserProvider>
         <Routes>
           <Route path='/' element={<Root />} />
           <Route path='/login' exact element={<Login />} />
@@ -25,8 +26,8 @@ const App = () => {
           <Route path='/income' exact element={<Income />} />
           <Route path='/expense' exact element={<Expense />} />
         </Routes>
-      </Router>
-    </div>
+    </UserProvider>
+    </Router>
   )
 }
 
